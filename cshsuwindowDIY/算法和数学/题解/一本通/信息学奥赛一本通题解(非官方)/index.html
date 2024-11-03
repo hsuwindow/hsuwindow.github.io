@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>信息学奥赛一本通题解(非官方) | hsuwindowBlogs</title><meta name="author" content="hsuwindow"><meta name="copyright" content="hsuwindow"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="我在搜寻题解的时候找到了别人自己一个人做的题解汇总[信息学奥赛一本通题解](http:&#x2F;&#x2F;ybt.10082009.com&#x2F;)所以就想着自己反正也做了,就也写一个题解,当做监督自己不要半途而废的外在作用力.这就是我这篇博客的由来.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信息学奥赛一本通题解(非官方)">
+<meta property="og:url" content="http://hsuwindow.vip/cshsuwindowDIY/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E5%AD%A6/%E9%A2%98%E8%A7%A3/%E4%B8%80%E6%9C%AC%E9%80%9A/%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B%E4%B8%80%E6%9C%AC%E9%80%9A%E9%A2%98%E8%A7%A3(%E9%9D%9E%E5%AE%98%E6%96%B9)/index.html">
+<meta property="og:site_name" content="hsuwindowBlogs">
+<meta property="og:description" content="我在搜寻题解的时候找到了别人自己一个人做的题解汇总[信息学奥赛一本通题解](http:&#x2F;&#x2F;ybt.10082009.com&#x2F;)所以就想着自己反正也做了,就也写一个题解,当做监督自己不要半途而废的外在作用力.这就是我这篇博客的由来.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://hsuwindow.vip/img/ubuntu_icon.png">
+<meta property="article:published_time" content="2024-11-03T09:04:58.947Z">
+<meta property="article:modified_time" content="2024-11-03T11:21:09.930Z">
+<meta property="article:author" content="hsuwindow">
+<meta property="article:tag" content="题解">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://hsuwindow.vip/img/ubuntu_icon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://hsuwindow.vip/cshsuwindowDIY/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E5%AD%A6/%E9%A2%98%E8%A7%A3/%E4%B8%80%E6%9C%AC%E9%80%9A/%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B%E4%B8%80%E6%9C%AC%E9%80%9A%E9%A2%98%E8%A7%A3(%E9%9D%9E%E5%AE%98%E6%96%B9)/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '信息学奥赛一本通题解(非官方)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-03 19:21:09'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/ubuntu_icon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">144</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">28</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">hsuwindowBlogs</span></a><a class="nav-page-title" href="/"><span class="site-name">信息学奥赛一本通题解(非官方)</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">信息学奥赛一本通题解(非官方)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-03T09:04:58.947Z" title="发表于 2024-11-03 17:04:58">2024-11-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-03T11:21:09.930Z" title="更新于 2024-11-03 19:21:09">2024-11-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/cshsuwindowDIY/">cshsuwindowDIY</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/cshsuwindowDIY/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E5%AD%A6/">算法和数学</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/cshsuwindowDIY/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E5%AD%A6/%E9%A2%98%E8%A7%A3/">题解</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/cshsuwindowDIY/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E5%AD%A6/%E9%A2%98%E8%A7%A3/%E4%B8%80%E6%9C%AC%E9%80%9A/">一本通</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Ctrl-鼠标左键单击题目即可跳转到官方网站做题"><a href="#Ctrl-鼠标左键单击题目即可跳转到官方网站做题" class="headerlink" title="Ctrl + 鼠标左键单击题目即可跳转到官方网站做题"></a>Ctrl + 鼠标左键单击题目即可跳转到官方网站做题</h1><h1 id="人类最大的敌人是傲慢-其次是无知"><a href="#人类最大的敌人是傲慢-其次是无知" class="headerlink" title="人类最大的敌人是傲慢,其次是无知"></a>人类最大的敌人是傲慢,其次是无知</h1><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本来自己只是再学C++PrimerPlus的过程中找点简单题目保持手感和熟练度的,所以找到了这个网站.</p>
+<p><a target="_blank" rel="noopener" href="http://ybt.ssoier.cn:8088/index.php">http://ybt.ssoier.cn:8088/index.php</a></p>
+<p>说实话我对自己的猪脑袋还有是自知之明的,自然不会去管那些自己不会的题目.但是有些简单题目还是挺适合现在的我的.而且我在搜寻题解的时候找到了别人自己一个人做的题解汇总</p>
+<p><a target="_blank" rel="noopener" href="http://ybt.10082009.com/">信息学奥赛一本通题解</a></p>
+<p>所以就想着自己反正也做了,就也写一个题解,当做监督自己不要半途而废的外在作用力.这就是我这篇博客的由来.</p>
+<p>别人做这个专门拿出来做一份题解</p>
+<p>我前面做过的就不做笔记了.,没啥时间而且就算有长进,性价低也不高,我直接从这里开始好好的批判自己的错误就算是狠狠进步了.</p>
+<p>这些题解发到博客上还有一个好处,就是不用在本地弄好条理清楚的文件夹,直接把重点题目发到博客上面来算是删繁就简.</p>
+<p>基本上只记录自己的错题和一些对自己有训练意义的题目,太简单的题目就没有了.</p>
+<h1 id="1003：对齐输出"><a href="#1003：对齐输出" class="headerlink" title="1003：对齐输出"></a>1003：<a target="_blank" rel="noopener" href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1003">对齐输出</a></h1><p><em><strong>*C语言printf(“”)左对齐和右对齐*</strong></em></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/abcdu1/article/details/74926375">https://blog.csdn.net/abcdu1/article/details/74926375</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Spy_in/article/details/124214390">https://blog.csdn.net/Spy_in/article/details/124214390</a></p>
+<p>在 printf 中，无论是 float 类型还是 double 类型，输出都需要用 %f ，在有些系统中用 %lf 也不会出错，但是尽量还是按照标准来</p>
+<p><img src="https://hsuwindowblog-1330711320.cos.ap-beijing.myqcloud.com/blogs/cshsuwindowDIY/Algorithm/SolutionsOnAlgorithms/ybtSsoierCn/202411031830697.jpg" alt="img"> </p>
+<p>这时候输出arr字符数组的大小,也就是整个数组所占的字节数目, 这个时候是包含null字符’\0’的,因此结果是2</p>
+<h1 id="2069：【例2-12-】糖果游戏"><a href="#2069：【例2-12-】糖果游戏" class="headerlink" title="2069：【例2.12 】糖果游戏"></a>2069：【例2.12 】<a target="_blank" rel="noopener" href="http://ybt.ssoier.cn:8088/problem_show.php?pid=2069">糖果游戏</a></h1><p><img src="https://hsuwindowblog-1330711320.cos.ap-beijing.myqcloud.com/blogs/cshsuwindowDIY/Algorithm/SolutionsOnAlgorithms/ybtSsoierCn/202411031835204.jpg" alt="img"></p>
+<h2 id="个人错误"><a href="#个人错误" class="headerlink" title="个人错误"></a>个人错误</h2><p>没有一开始看出来这是一个简单的模拟,同时总是&#x3D;&#x3D;想偷懒,不用newa和a来分别表示当下的a和新的a.&#x3D;&#x3D;</p>
+<p>一般都是两个步骤</p>
+<ol>
+<li>newa等于a,b,c等等的一个代数表达式</li>
+<li>a等于newa,newb,newc等等的一个代数表达式</li>
+</ol>
+<h2 id="个人修改"><a href="#个人修改" class="headerlink" title="个人修改"></a>个人修改</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b, c, d, e;</span><br><span class="line">    cin &gt;&gt; a;</span><br><span class="line">    cin &gt;&gt; b;</span><br><span class="line">    cin &gt;&gt; c;</span><br><span class="line">    cin &gt;&gt; d;</span><br><span class="line">    cin &gt;&gt; e;</span><br><span class="line">    <span class="type">int</span> newa = a / <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> newb = (newa + b) / <span class="number">3</span>;</span><br><span class="line">    <span class="type">int</span> newc = (newb + c) / <span class="number">3</span>;</span><br><span class="line">    <span class="type">int</span> newd = (newc + d) / <span class="number">3</span>;</span><br><span class="line">    <span class="type">int</span> newe = (newd + e + newa) / <span class="number">3</span>;</span><br><span class="line">    a = newa + newb + newe;</span><br><span class="line">    b = newb + newc;</span><br><span class="line">    c = newc + newd;</span><br><span class="line">    d = newd + newe;</span><br><span class="line">    e = newe;</span><br><span class="line">    <span class="comment">// printf(&quot;%d&quot;, a);</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%5d%5d%5d%5d%5d&quot;</span>, a, b, c, d, e);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2059：【例3-11】买笔"><a href="#2059：【例3-11】买笔" class="headerlink" title="2059：【例3.11】买笔"></a>2059：【例3.11】<a target="_blank" rel="noopener" href="http://ybt.ssoier.cn:8088/problem_show.php?pid=2059">买笔</a></h1><h2 id="个人错误-1"><a href="#个人错误-1" class="headerlink" title="个人错误"></a>个人错误</h2><p>买笔题解参考</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/2301_79128218/article/details/132249539">2059：【例3.11】买笔</a></p>
+<h2 id="个人修改-1"><a href="#个人修改-1" class="headerlink" title="个人修改"></a>个人修改</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    cin &gt;&gt; x;</span><br><span class="line">    <span class="type">int</span> res = x / <span class="number">4</span>;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>, c; <span class="comment">// for 6 5 4</span></span><br><span class="line">    <span class="type">int</span> remainder = x % <span class="number">4</span>;</span><br><span class="line">    <span class="keyword">switch</span> (remainder)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">        c = res;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    &#123;</span><br><span class="line">        b++;</span><br><span class="line">        c = res - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    &#123;</span><br><span class="line">        a++;</span><br><span class="line">        c = res - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    &#123;</span><br><span class="line">        b++;</span><br><span class="line">        a++;</span><br><span class="line">        c = res - <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line"></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; c &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="1052：计算邮资"><a href="#1052：计算邮资" class="headerlink" title="1052：计算邮资"></a><a target="_blank" rel="noopener" href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1052">1052：计算邮资</a></h1><h2 id="个人错误-2"><a href="#个人错误-2" class="headerlink" title="个人错误"></a>个人错误</h2><p>个人犯的错误:对于整除的性质理解不够,见到题干</p>
+<blockquote>
+<p>超过1000克的部分，每500克加收超重费4元，不足500克部分按500克计算</p>
+</blockquote>
+<p>就直接写</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (x &lt;= <span class="number">1000</span>)</span><br><span class="line">        money = <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        money = <span class="number">8</span> + ((x - <span class="number">1000</span>) / <span class="number">500</span> + <span class="number">1</span>) * <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
+
+<p>殊不知整除的性质就是  &#x3D;&#x3D;如果刚好整除就整除,否则向下取整&#x3D;&#x3D;</p>
+<p>那么对于题干的描述</p>
+<blockquote>
+<p>不足500克部分按500克计算</p>
+</blockquote>
+<p>就要分足500g的时候和不足500g的时候,足500g的时候不用加1;不足500g的时候还是要加1;</p>
+<h2 id="个人修改-2"><a href="#个人修改-2" class="headerlink" title="个人修改"></a>个人修改</h2><p>按照我的思路继续修改代码的应该是这样的.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (x &lt;= <span class="number">1000</span>)</span><br><span class="line">        money = <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> res = (x - <span class="number">1000</span>) % <span class="number">500</span>;</span><br><span class="line">        <span class="keyword">if</span> (res)</span><br><span class="line">            money = <span class="number">8</span> + ((x - <span class="number">1000</span>) / <span class="number">500</span> + <span class="number">1</span>) * <span class="number">4</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            money = <span class="number">8</span> + (x - <span class="number">1000</span>) / <span class="number">500</span> * <span class="number">4</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>实测通过了</p>
+<p><img src="https://hsuwindowblog-1330711320.cos.ap-beijing.myqcloud.com/blogs/cshsuwindowDIY/Algorithm/SolutionsOnAlgorithms/ybtSsoierCn/202411031757723.png" alt="image-20241103175758653"></p>
+<p>但这样显然还是不够好,从别人的写法中这样写更好.使用ceil函数( 在cmath里面)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">char</span> ch;</span><br><span class="line">    <span class="type">int</span> money = <span class="number">0</span>;</span><br><span class="line">    cin &gt;&gt; x;</span><br><span class="line">    cin &gt;&gt; ch;</span><br><span class="line">    <span class="keyword">if</span> (x &lt;= <span class="number">1000</span>)</span><br><span class="line">        money = <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        money = <span class="number">8</span> + <span class="built_in">ceil</span>((x - <span class="number">1000</span>) / <span class="number">500.0</span>) * <span class="number">4</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">&#x27;y&#x27;</span> == ch)</span><br><span class="line">        money += <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, money);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实测也通过了</p>
+<p><img src="https://hsuwindowblog-1330711320.cos.ap-beijing.myqcloud.com/blogs/cshsuwindowDIY/Algorithm/SolutionsOnAlgorithms/ybtSsoierCn/202411031821050.png" alt="image-20241103182151940"></p>
+<aside> 💡 有关信息学奥赛一本通题解(非官方)上的问题，欢迎您在底部评论区留言，一起交流~</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://hsuwindow.vip">hsuwindow</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://hsuwindow.vip/cshsuwindowDIY/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E5%AD%A6/%E9%A2%98%E8%A7%A3/%E4%B8%80%E6%9C%AC%E9%80%9A/%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B%E4%B8%80%E6%9C%AC%E9%80%9A%E9%A2%98%E8%A7%A3(%E9%9D%9E%E5%AE%98%E6%96%B9)/">http://hsuwindow.vip/cshsuwindowDIY/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E5%AD%A6/%E9%A2%98%E8%A7%A3/%E4%B8%80%E6%9C%AC%E9%80%9A/%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B%E4%B8%80%E6%9C%AC%E9%80%9A%E9%A2%98%E8%A7%A3(%E9%9D%9E%E5%AE%98%E6%96%B9)/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://hsuwindow.vip" target="_blank">hsuwindowBlogs</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%A2%98%E8%A7%A3/">题解</a></div><div class="post-share"><div class="social-share" data-image="/img/ubuntu_icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/%E6%9C%AA%E5%88%86%E7%B1%BB/typora%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%A0%81%E5%9D%97%E9%BB%98%E8%AE%A4%E8%AF%AD%E8%A8%80/" title="typora设置代码块默认语言"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">typora设置代码块默认语言</div></div><div class="info-2"><div class="info-item-1">typora设置默认代码块为c++</div></div></div></a><a class="pagination-related" href="/cshsuwindowDIY/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E5%AD%A6/AcWing/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE03/" title="第一章 基础算法（一）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">第一章 基础算法（一）</div></div><div class="info-2"><div class="info-item-1">z  💡 有关AcWing算法基础课笔记的问题，欢迎您在底部评论区留言，一起交流~</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/ubuntu_icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">hsuwindow</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">144</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">28</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎光临本站,这是我日常工作和学习整理的总结,希望对你有所帮助.本站内容经过个人加工总结而来,也参考了网友们分享的资料,如有侵权,请第一时间联系我,我将及时进行修改或删除.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ctrl-%E9%BC%A0%E6%A0%87%E5%B7%A6%E9%94%AE%E5%8D%95%E5%87%BB%E9%A2%98%E7%9B%AE%E5%8D%B3%E5%8F%AF%E8%B7%B3%E8%BD%AC%E5%88%B0%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99%E5%81%9A%E9%A2%98"><span class="toc-text">Ctrl + 鼠标左键单击题目即可跳转到官方网站做题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%BA%E7%B1%BB%E6%9C%80%E5%A4%A7%E7%9A%84%E6%95%8C%E4%BA%BA%E6%98%AF%E5%82%B2%E6%85%A2-%E5%85%B6%E6%AC%A1%E6%98%AF%E6%97%A0%E7%9F%A5"><span class="toc-text">人类最大的敌人是傲慢,其次是无知</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1003%EF%BC%9A%E5%AF%B9%E9%BD%90%E8%BE%93%E5%87%BA"><span class="toc-text">1003：对齐输出</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2069%EF%BC%9A%E3%80%90%E4%BE%8B2-12-%E3%80%91%E7%B3%96%E6%9E%9C%E6%B8%B8%E6%88%8F"><span class="toc-text">2069：【例2.12 】糖果游戏</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E9%94%99%E8%AF%AF"><span class="toc-text">个人错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E4%BF%AE%E6%94%B9"><span class="toc-text">个人修改</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2059%EF%BC%9A%E3%80%90%E4%BE%8B3-11%E3%80%91%E4%B9%B0%E7%AC%94"><span class="toc-text">2059：【例3.11】买笔</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E9%94%99%E8%AF%AF-1"><span class="toc-text">个人错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E4%BF%AE%E6%94%B9-1"><span class="toc-text">个人修改</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1052%EF%BC%9A%E8%AE%A1%E7%AE%97%E9%82%AE%E8%B5%84"><span class="toc-text">1052：计算邮资</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E9%94%99%E8%AF%AF-2"><span class="toc-text">个人错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E4%BF%AE%E6%94%B9-2"><span class="toc-text">个人修改</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E6%9C%AA%E5%88%86%E7%B1%BB/typora%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%A0%81%E5%9D%97%E9%BB%98%E8%AE%A4%E8%AF%AD%E8%A8%80/" title="typora设置代码块默认语言">typora设置代码块默认语言</a><time datetime="2024-11-03T09:21:45.317Z" title="发表于 2024-11-03 17:21:45">2024-11-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/cshsuwindowDIY/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E5%AD%A6/%E9%A2%98%E8%A7%A3/%E4%B8%80%E6%9C%AC%E9%80%9A/%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B%E4%B8%80%E6%9C%AC%E9%80%9A%E9%A2%98%E8%A7%A3(%E9%9D%9E%E5%AE%98%E6%96%B9)/" title="信息学奥赛一本通题解(非官方)">信息学奥赛一本通题解(非官方)</a><time datetime="2024-11-03T09:04:58.947Z" title="发表于 2024-11-03 17:04:58">2024-11-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/cshsuwindowDIY/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E5%AD%A6/AcWing/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE03/" title="第一章 基础算法（一）">第一章 基础算法（一）</a><time datetime="2024-11-02T12:25:30.342Z" title="发表于 2024-11-02 20:25:30">2024-11-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/cshsuwindowDIY/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E5%AD%A6/AcWing/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE04/" title="第二章 数据结构（一）">第二章 数据结构（一）</a><time datetime="2024-11-02T12:25:30.156Z" title="发表于 2024-11-02 20:25:30">2024-11-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/cshsuwindowDIY/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E5%AD%A6/AcWing/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE05/" title="第一章 基础算法（一）">第一章 基础算法（一）</a><time datetime="2024-11-02T12:25:29.938Z" title="发表于 2024-11-02 20:25:29">2024-11-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By hsuwindow</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
